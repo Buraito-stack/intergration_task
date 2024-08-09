@@ -20,13 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $name = $_POST['name'] ?? '';
             $category->insert($name);
             $message = 'Category added successfully.';
-
         } elseif ($action === 'update') {
             $id = (int)$_POST['id'];
             $name = $_POST['name'] ?? '';
             $category->update($id, $name);
             $message = 'Category updated successfully.';
-
         } elseif ($action === 'delete') {
             $id = (int)$_POST['id'];
             $category->delete($id);
@@ -35,6 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } catch (Exception $e) {
         $message = 'Error: ' . $e->getMessage();
     }
+
+    header("Location: index.php");
+    exit;
 }
 
 try {
@@ -49,7 +50,6 @@ try {
 if (isset($connectionStatus['error'])) {
     $db_error = $connectionStatus['error'];
 }
-
 if (isset($connectionStatus['success'])) {
     $db_success = $connectionStatus['success'];
 }
