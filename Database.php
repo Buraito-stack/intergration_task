@@ -8,8 +8,7 @@ class Database
     private $database = 'demo_intern';
     private $connection;
 
-    public function __construct() 
-    {
+    public function __construct() {
         $this->connect();
     }
 
