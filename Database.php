@@ -17,14 +17,14 @@ class Database
         $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
 
         if ($this->connection->connect_error) {
-            $GLOBALS['db_error'] = "Connection failed: " . $this->connection->connect_error;
-        }
-
+            $this->connectionStatus['error'] = "Connection failed: " . $this->connection->connect_error;
+        } 
+        
         {
-            $GLOBALS['db_success'] = "Connected successfully";
+            $this->connectionStatus['success'] = "Connected successfully";
         }
     }
-
+    
     public function getConnection() 
     {
         return $this->connection;
