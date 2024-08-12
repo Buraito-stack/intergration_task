@@ -65,12 +65,12 @@ if (isset($connectionStatus['success'])) {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .notification {
-            display: none; /* Hidden by default */
+            display: none; 
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            border-radius: 0.375rem; /* Rounded corners */
+            border-radius: 0.375rem; 
         }
     </style>
 </head>
@@ -174,21 +174,21 @@ if (isset($connectionStatus['success'])) {
                 dbError.style.display = 'block';
                 setTimeout(function() {
                     dbError.style.display = 'none';
-                }, 5000); // 5 seconds
+                }, 5000); 
             }
             
             if (dbSuccess) {
                 dbSuccess.style.display = 'block';
                 setTimeout(function() {
                     dbSuccess.style.display = 'none';
-                }, 5000); // 5 seconds
+                }, 5000); 
             }
 
             if (crudMessage) {
                 crudMessage.style.display = 'block';
                 setTimeout(function() {
                     crudMessage.style.display = 'none';
-                }, 5000); // 5 seconds
+                }, 5000); 
             }
         });
     </script>
